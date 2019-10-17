@@ -9,21 +9,15 @@ Sign Up
 {% block content %}
 <div class="login">
 
-    <form class="form-signin" method="POST" action="/login">
+    <form class="form-signin" method="POST" action="/register">
       <h1>join dasv</h1>
       {{ form.hidden_tag() }}
+      <font color="gray">{{ wtf.form_field(form.email) }}</font>
       <font color="gray">{{ wtf.form_field(form.username) }}</font>
       <font color="gray">{{ wtf.form_field(form.password) }}</font>
-      <font color="gray">{{ wtf.form_field(form.email) }}</font>
       <button type="submit" class="btn btn-primary btn-block btn-large">join</button>
     </form>
 
   </div> <!-- /container -->
 
-  
-    <!-- {{ form.hidden_tag() }}
-    {{ wtf.form_field(form.username) }}
-    {{ wtf.form_field(form.email) }}
-    {{ wtf.form_field(form.password) }} -->
-    
 {% endblock %}

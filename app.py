@@ -25,11 +25,19 @@ class RegisterForm(FlaskForm):
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
+    
+    if form.validate_on_submit():
+        return '<h1>' + form.username.data + ' ' + form.password.data + '</h1>'
+
     return render_template('login.html', form=form)
 
 @app.route('/register', methods=['GET', 'POST'])
 def signup():
     form = RegisterForm()
+
+    if form.validate_on_submit():
+        return '<h1>' + form.username.data + ' ' + form.email.data + ' ' + form.password.data + '</h1>'
+    
     return render_template('register.html', form=form)        
 
      
