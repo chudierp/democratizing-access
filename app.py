@@ -71,7 +71,7 @@ def signup():
         db.session.commit()
 
 
-        return '<h1>New user has been created</h1>'
+        return redirect(url_for('login')) 
         
    
     return render_template('register.html', form=form)
